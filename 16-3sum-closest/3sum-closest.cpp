@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int findClosest(const std::vector<int>& arr, int target, int start) {
+    int findClosest(vector<int>& arr, int target, int start) {
 
         // Use lower_bound to find the first element not less than the target
         auto it = std::lower_bound(arr.begin()+start, arr.end(), target);

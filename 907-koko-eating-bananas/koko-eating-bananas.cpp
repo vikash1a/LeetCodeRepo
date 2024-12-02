@@ -14,12 +14,7 @@ public:
         int minSpeed = e;
         while(s<=e){
             int m = s+(e-s)/2;
-            long long sv = getTime(piles, s);
-            long long ev = getTime(piles, e);
-            long long mv = getTime(piles, m);
-            // cout<<s<<" "<<m<<" "<<e<<endl;
-            // cout<<sv<<"-"<<mv<<"-"<<ev<<endl;
-            if(mv<=h){
+            if(getTime(piles, m)<=h){
                 minSpeed = m;
                 e = m-1;
             }

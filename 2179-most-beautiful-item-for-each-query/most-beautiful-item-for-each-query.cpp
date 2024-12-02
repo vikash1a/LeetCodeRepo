@@ -25,4 +25,6 @@ public:
 /*
 Brute force - O(q)*O(n)
 
+Optimised - O(q)*O(logn)
+
 */

@@ -1,6 +1,6 @@
 class Solution {
 public:
-    long long getTime(vector<int>& piles, long long speed){
+    long long getTime(vector<int>& piles, int speed){
         long long time = 0;
         for(int k: piles){
             time += k/speed;
@@ -10,10 +10,10 @@ public:
     }
     int minEatingSpeed(vector<int>& piles, int h) {
         int np = (int)piles.size()-1;
-        long long s = 1, e = *max_element(piles.begin(), piles.end());
-        long long minSpeed = e;
+        int s = 1, e = *max_element(piles.begin(), piles.end());
+        int minSpeed = e;
         while(s<=e){
-            long long m = s+(e-s)/2;
+            int m = s+(e-s)/2;
             long long sv = getTime(piles, s);
             long long ev = getTime(piles, e);
             long long mv = getTime(piles, m);
@@ -32,6 +32,6 @@ public:
 };
 /*
 Bruteforce - O(N)*O(N)
-
+Optimised - O(N)*O(logN)
 
 */

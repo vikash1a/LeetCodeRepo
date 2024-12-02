@@ -2,7 +2,6 @@ class Solution {
 public:
     int findClosest(vector<int>& arr, int target, int start) {
 
-        // Use lower_bound to find the first element not less than the target
         auto it = std::lower_bound(arr.begin()+start, arr.end(), target);
 
         // If the target is less than the smallest element
@@ -30,13 +29,10 @@ public:
                 int toFind = target-(nums[i]+nums[j]);
                 int kv = findClosest(nums, toFind, j+1);
                 int tempSum = nums[i]+nums[j]+kv;
-                // cout<<nums[i]<<"/"<<nums[j]<<"/"<<nums[k]<<endl;
                 if(abs(tempSum-target)<close){
-                    // cout<<tempSum<<"_"<<abs(tempSum-target)<<endl;
                     close = abs(tempSum-target);
                     sum = tempSum;
                 }
-                
             }
         }
         return sum;

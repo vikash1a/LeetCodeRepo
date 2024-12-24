@@ -23,10 +23,8 @@ public:
         else{
             int ns = s.size()-1;
             for(int i=1;i<=ns;i++){
-                string s1 = s.substr(0,i);
-                string s2 = s.substr(i, ns+1);
-                int m1 = minimumBeautifulSubstrings(s1);
-                int m2 = minimumBeautifulSubstrings(s2);
+                int m1 = minimumBeautifulSubstrings(s.substr(0,i));
+                int m2 = minimumBeautifulSubstrings(s.substr(i, ns+1));
                 // cout<<s1<<"="<<m1<<"  "<<s2<<"="<<m2<<endl;
                 if(m1!=-1 && m2!=-1)minValue = min(minValue, m1+m2);
             }

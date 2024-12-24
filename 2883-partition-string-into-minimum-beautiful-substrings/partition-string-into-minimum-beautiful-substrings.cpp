@@ -1,12 +1,6 @@
 class Solution {
 public:
-    // void printBinary(int k){
-    //     while(k>0){
-    //         cout<<(k&1);
-    //         k = k>>1;
-    //     }
-    //     cout<<endl;
-    // }
+
     unordered_map<string,int> unmp;
     bool isDivisibleBy5(string s){
         long long num = 0;
@@ -33,13 +27,13 @@ public:
                 string s2 = s.substr(i, ns+1);
                 int m1 = minimumBeautifulSubstrings(s1);
                 int m2 = minimumBeautifulSubstrings(s2);
-                cout<<s1<<"="<<m1<<"  "<<s2<<"="<<m2<<endl;
+                // cout<<s1<<"="<<m1<<"  "<<s2<<"="<<m2<<endl;
                 if(m1!=-1 && m2!=-1)minValue = min(minValue, m1+m2);
             }
         }
         if(minValue == INT_MAX)minValue = -1;
         unmp[s] = minValue;
-        cout<<s<<" "<<minValue<<endl;
+        // cout<<s<<" "<<minValue<<endl;
         return minValue;
     }
 };

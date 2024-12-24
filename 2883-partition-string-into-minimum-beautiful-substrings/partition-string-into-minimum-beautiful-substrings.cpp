@@ -2,7 +2,7 @@ class Solution {
 public:
 
     unordered_map<string,int> unmp;
-    bool isDivisibleBy5(string s){
+    bool isDivisibleBy5(string& s){
         long long num = 0;
         for(int i = 0;i<=(int)s.size()-1;i++){
             num+= (s[i]-'0')*((long long)(pow(2,(int)s.size()-1-i)));

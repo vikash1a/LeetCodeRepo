@@ -1,6 +1,7 @@
 class Solution {
 public:
 
+    // copied from chatgpt
     const int MOD = 1e9 + 7;
 
     int specialPermutations(vector<int>& nums) {

@@ -8,7 +8,6 @@ public:
         return {stoi(s2),stoi(s1)};
     }
     int evalRPN(vector<string>& tokens) {
-        int result = 0;
         int nt = tokens.size()-1;
         stack<string> st;
         vector<int> v;
@@ -17,27 +16,19 @@ public:
             // cout<<s<<" "<<result<<endl;
             if(s == "+"){
                 v = getNum(st);
-                int r = v[0] + v[1];
-                st.push(to_string(r));
-                result = r;
+                st.push(to_string(v[0] + v[1]));
             }
             else if(s == "-"){
                 v = getNum(st);
-                int r = v[0] - v[1];
-                st.push(to_string(r));
-                result = r;
+                st.push(to_string(v[0] - v[1]));
             }
             else if(s == "*"){
                 v = getNum(st);
-                int r = v[0] * v[1];
-                st.push(to_string(r));
-                result = r;
+                st.push(to_string(v[0] * v[1]));
             }
             else if(s == "/"){
                 v = getNum(st);
-                int r = v[0] / v[1];
-                st.push(to_string(r));
-                result = r;
+                st.push(to_string(v[0] / v[1]));
             }
             else{
                 st.push(s);

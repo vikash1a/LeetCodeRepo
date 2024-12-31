@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
         vector<int> duplicates;
-        set<int> duplicatesSet;
+        unordered_set<int> duplicatesSet;
         int nn = nums.size()-1;
         for(int i=0;i<=nn;i++){
             int j = i;

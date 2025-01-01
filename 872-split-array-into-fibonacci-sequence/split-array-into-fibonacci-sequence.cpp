@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // further optimisation - use index for num instead of substring
     string intMax= to_string(INT_MAX);
     bool isOutOfRange(string& s){
         if(s.size()> intMax.size())return true;

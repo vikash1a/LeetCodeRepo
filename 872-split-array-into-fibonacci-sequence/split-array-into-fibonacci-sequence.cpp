@@ -1,7 +1,7 @@
 class Solution {
 public:
     string intMax= to_string(INT_MAX);
-    bool isOutOfRange(string s){
+    bool isOutOfRange(string& s){
         if(s.size()> intMax.size())return true;
         else if(s.size()< intMax.size())return false;
         else return s>intMax;

@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int getBqCount(vector<int>& bloomDay, int k, int days){
+    int getBqCount(vector<int>& bloomDay, int& k, int& days){
         int bqCount = 0;
         int tempCount = 0;
         for(int i=0;i<=(int)bloomDay.size()-1;i++){

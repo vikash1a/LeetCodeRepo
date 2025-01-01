@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // recursive
     // int mod = 1e9+7;
     // void print( vector<vector<int>>& dp){
     //     for(vector<int> v: dp){
@@ -41,7 +42,7 @@ public:
 
     // bottom up
     int numWays(int steps, int arrLen) {
-        arrLen = min(arrLen, steps);
+        arrLen = min(arrLen, steps); // this step learnt from solution
         int mod = 1e9+7;
         vector<int> dp(arrLen,0);
         vector<int> dpTemp = dp;

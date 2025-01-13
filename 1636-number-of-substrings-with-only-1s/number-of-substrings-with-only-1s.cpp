@@ -1,9 +1,8 @@
 class Solution {
 public:
     int mod = 1e9+7;
-    int maxV = 1e5+2;
     vector<long long> count;
-    void prepare(){
+    void prepare(int maxV){
         count.resize(maxV);
         count[0] = 0;count[1] = 1;
         for(int i=2;i<=maxV-1;i++){
@@ -11,8 +10,8 @@ public:
         }
     }
     int numSub(string s) {
-        prepare();
         int ns = s.size()-1;
+        prepare(ns+2);
         int tempCount = 0;
         int totalCount = 0;
         for(int i=0;i<=ns;i++){

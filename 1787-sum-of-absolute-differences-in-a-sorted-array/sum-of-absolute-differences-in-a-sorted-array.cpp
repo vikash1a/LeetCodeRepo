@@ -8,7 +8,7 @@ public:
             vp[i] = {nums[i],i};
             totalSum+=nums[i];
         }
-        sort(nums.begin(), nums.end());
+        // sort(nums.begin(), nums.end());
         vector<int> sumDiff(nn+1);
         
         int leftSum = 0, rightSum = totalSum;

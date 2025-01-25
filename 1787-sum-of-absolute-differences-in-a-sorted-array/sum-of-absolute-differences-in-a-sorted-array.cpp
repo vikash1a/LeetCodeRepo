@@ -15,7 +15,7 @@ public:
         for(int i=0;i<=nn;i++){
             if(i-1>=0)leftSum+=vp[i-1].first;
             rightSum-=vp[i].first;
-            sumDiff[vp[i].second] = (long)rightSum - (long)((nn-i)*vp[i].first)+(long)((i)*vp[i].first)- (long)leftSum;
+            sumDiff[vp[i].second] = (long)rightSum - (long)((nn-2*i)*vp[i].first)- (long)leftSum;
         }
         return sumDiff;
     }

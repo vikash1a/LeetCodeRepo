@@ -32,9 +32,9 @@ public:
 
         int totalProfit = 0;
         for(int i=0; i<=nw; i++){
-            int profit = getProfit(worker[i], difficultyProfit);
+            // int profit = getProfit(worker[i], difficultyProfit);
             // cout<<i<<" "<<profit<<endl;
-            totalProfit += profit;
+            totalProfit += getProfit(worker[i], difficultyProfit);
         }
         return totalProfit;
     }

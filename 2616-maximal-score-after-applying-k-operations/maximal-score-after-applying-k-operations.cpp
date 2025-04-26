@@ -8,10 +8,7 @@ public:
             int top = pq.top();
             pq.pop();
             maxScore += top;
-            int topModified = top/3;
-            if(top%3!=0)topModified+=1;
-            pq.push(topModified);
-            // cout<<top<<" "<<topModified<<endl;
+            pq.push(ceil(((double)top)/3));
         }
         return maxScore;
     }

@@ -23,7 +23,7 @@ public:
         floydWarshall(distanceV, n);
         for(int i=1;i<=n;i++){
             for(int j=1;j<=n;j++){
-                if(i!=j && distanceV[i][j]>=1 && distanceV[i][j]<=n){
+                if(i!=j){
                     pairCountV[distanceV[i][j]]+=1;
                 }
             }

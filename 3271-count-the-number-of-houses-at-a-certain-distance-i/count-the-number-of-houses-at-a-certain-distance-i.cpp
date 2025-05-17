@@ -1,46 +1,29 @@
 class Solution {
 public:
-    void shortestDistance(vector<vector<int>>& adjV, int& n, int s, vector<vector<int>>& distanceV){
-        // intialise a priority queue 
-        queue<int> qu;
-        vector<bool> visited(n+1,false);
-        qu.push(s);
-        visited[s] = true;
-        int level = 0;
-        while(!qu.empty()){
-            queue<int> quTemp;
-            while(!qu.empty()){
-                int front = qu.front();
-                qu.pop();
-                distanceV[s][front] = min(distanceV[s][front], level);
-                distanceV[front][s] = min(distanceV[front][s], level);
-                visited[front] = true;
-                for(int i=0;i<=adjV[front].size()-1;i++){
-                    int d = adjV[front][i];
-                    if(!visited[d])quTemp.push(d);
+    void floydWarshall(vector<vector<int>>& distV, int& n){
+        for(int k=1;k<=n;k++){
+            for(int i=1;i<=n;i++){
+                for(int j=1;j<=n;j++){
+                    if(distV[i][k]!=1e5 && distV[k][j]!=1e5){
+                        distV[i][j] = min(distV[i][j], distV[i][k]+distV[k][j]);
+                    }
                 }
             }
-            qu = quTemp;
-            level+=1;
         }
     }
     vector<int> countOfPairs(int n, int x, int y) {
         vector<int> pairCountV(n+1,0);
-        vector<vector<int>> adjV(n+1);
+        vector<vector<int>> distanceV(n+1, vector<int>(n+1,1e5));
         for(int i=1;i<=n-1;i++){
-            adjV[i].push_back(i+1);
-            adjV[i+1].push_back(i);
+            distanceV[i][i+1] = 1;
+            distanceV[i+1][i] = 1;
         }
-        adjV[x].push_back(y);
-        adjV[y].push_back(x);
-
-        vector<vector<int>> distanceV(n+1, vector<int>(n+1,INT_MAX));
-        for(int i=1;i<=n;i++){
-            shortestDistance(adjV, n, i,distanceV);
-        }
+        distanceV[x][y] = 1;
+        distanceV[y][x] = 1;
+        floydWarshall(distanceV, n);
         for(int i=1;i<=n;i++){
             for(int j=1;j<=n;j++){
-                if(distanceV[i][j]>=1 && distanceV[i][j]<=INT_MAX){
+                if(i!=j && distanceV[i][j]>=1 && distanceV[i][j]<=n){
                     pairCountV[distanceV[i][j]]+=1;
                 }
             }

@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // copied 
     vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
         // Edge case
         if (n <= 2) {

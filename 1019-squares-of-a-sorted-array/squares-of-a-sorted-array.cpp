@@ -5,7 +5,7 @@ public:
             cout<<k<<" ";
         }cout<<endl;
     }
-    vector<int> mergeHelper(vector<int> v1, vector<int> v2){
+    vector<int> mergeHelper(vector<int>& v1, vector<int>& v2){
         int n1= v1.size()-1, n2 = v2.size()-1;
         if(n1==-1) {
             sort(v2.begin(), v2.end());
